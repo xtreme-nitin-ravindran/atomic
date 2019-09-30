@@ -101,7 +101,7 @@ def list_pvs(vgroup):
 
 def list_lvs(vgroup):
     if vgroup:
-        return map(lambda s: s.strip(), # pylint: disable=deprecated-lambda, map-builtin-not-iterating
+        return map(lambda s: s.strip(), # pylint: map-builtin-not-iterating
                    util.check_output([ "lvs", "--noheadings", "-o", "name", vgroup ]).decode('utf-8').splitlines())
     else:
         return [ ]
