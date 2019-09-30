@@ -18,7 +18,7 @@ all: python-build docs pylint-check gotar
 
 .PHONY: test-python3-pylint
 test-python3-pylint:
-	$(PYTHON3_PYLINT) --disable=all --enable=E --enable=W --additional-builtins=_ *.py atomic Atomic tests/unit/*.py -d=no-absolute-import,print-statement,no-absolute-import,bad-builtin,catching-non-exception,raising-non-exception,dict-keys-not-iterating,unnecessary-pass,fixme,map-builtin-not-iterating
+	$(PYTHON3_PYLINT) --disable=all --enable=E --enable=W --additional-builtins=_ *.py atomic Atomic tests/unit/*.py -d=no-absolute-import,print-statement,no-absolute-import,bad-builtin,catching-non-exception,raising-non-exception,dict-keys-not-iterating,unnecessary-pass,fixme,map-builtin-not-iterating,unexpected-keyword-arg,bad-option-value,invalid-overridden-method
 
 .PHONY: test check test-suite
 
@@ -38,7 +38,7 @@ python-build:
 
 .PHONY: pylint-check
 pylint-check:
-	$(PYLINT) --disable=all --enable=E --enable=W --additional-builtins=_ *.py atomic Atomic tests/unit/*.py -d=no-absolute-import,print-statement,no-absolute-import,bad-builtin,catching-non-exception,raising-non-exception,dict-keys-not-iterating,unnecessary-pass,fixme,map-builtin-not-iterating
+	$(PYLINT) --disable=all --enable=E --enable=W --additional-builtins=_ *.py atomic Atomic tests/unit/*.py -d=no-absolute-import,print-statement,no-absolute-import,bad-builtin,catching-non-exception,raising-non-exception,dict-keys-not-iterating,unnecessary-pass,fixme,map-builtin-not-iterating,unexpected-keyword-arg,bad-option-value,invalid-overridden-method
 
 MANPAGES_MD = $(wildcard docs/*.md)
 
