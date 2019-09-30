@@ -38,7 +38,7 @@ python-build:
 
 .PHONY: pylint-check
 pylint-check:
-	$(PYLINT) --disable=all --enable=E --enable=W --additional-builtins=_ *.py atomic Atomic tests/unit/*.py -d=no-absolute-import,print-statement,no-absolute-import,bad-builtin,catching-non-exception,raising-non-exception
+	$(PYLINT) --disable=all --enable=E --enable=W --additional-builtins=_ *.py atomic Atomic tests/unit/*.py -d=no-absolute-import,print-statement,no-absolute-import,bad-builtin,catching-non-exception,raising-non-exception,dict-keys-not-iterating,unnecessary-pass,fixme,map-builtin-not-iterating
 
 MANPAGES_MD = $(wildcard docs/*.md)
 
